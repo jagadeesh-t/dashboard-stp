@@ -1,0 +1,81 @@
+{
+  "name": "EwalletSTP",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest --verbose --coverage --forceExit",
+    "ios": "rndebugger-open && react-native run-ios",
+    "android": "cd android && ./gradlew clean && cd .. && rndebugger-open && react-native run-android",
+    "android:release": "cd android && ./gradlew assembleRelease && cd ..",
+    "test:update": "jest --verbose --coverage --updateSnapshot",
+    "test:watch": "jest --verbose --watch",
+    "test:coverage": "jest --verbose --coverage && open ./coverage/lcov-report/index.html",
+    "lint": "eslint app/",
+    "lint:fix": "eslint app/ --fix"
+  },
+  "dependencies": {
+    "axios": "^0.16.1",
+    "call-once-in-interval": "^1.0.1",
+    "moment": "^2.18.1",
+    "react": "16.0.0-alpha.12",
+    "react-dom": "16.0.0-alpha.12",
+    "react-native": "0.45.0-rc.2",
+    "react-native-collapsible": "^0.8.0",
+    "react-native-datepicker": "^1.6.0",
+    "react-native-elements": "^0.13.0",
+    "react-native-exception-handler": "^1.0.1",
+    "react-native-flexi-radio-button": "^0.2.1",
+    "react-native-google-analytics-bridge": "^5.0.1",
+    "react-native-keyboard-aware-scroll-view": "^0.2.9",
+    "react-native-mail": "^3.0.4",
+    "react-native-modal-dropdown": "^0.4.4",
+    "react-native-restart": "^0.0.2",
+    "react-native-simple-toast": "^0.0.6",
+    "react-native-snackbar-dialog": "^1.3.0",
+    "react-native-splash-screen": "^2.0.0",
+    "react-native-tab-navigator": "^0.3.3",
+    "react-native-vector-icons": "^4.1.1",
+    "react-native-version-number": "^0.1.2",
+    "react-navigation": "^1.0.0-beta.9",
+    "react-redux": "^5.0.5",
+    "redux": "^3.6.0",
+    "redux-actions": "^2.0.3",
+    "redux-form": "^6.7.0",
+    "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "axios-mock-adapter": "^1.8.1",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
+    "babel-preset-react-native": "^1.9.2",
+    "enzyme": "^2.8.2",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^7.0.1",
+    "eslint-plugin-react-native": "^2.3.2",
+    "jest": "^20.0.3",
+    "jest-enzyme": "^3.1.1",
+    "pre-push": "^0.1.1",
+    "react-addons-test-utils": "^15.5.1",
+    "react-native-debugger-open": "^0.3.11",
+    "react-test-renderer": "^15.5.4"
+  },
+  "pre-push": [],
+  "jest": {
+    "preset": "react-native",
+    "cacheDirectory": "./cache",
+    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
+    "coveragePathIgnorePatterns": [
+      "./app/utils/vendor"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 45
+      }
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-navigation)"
+    ]
+  }
+}
